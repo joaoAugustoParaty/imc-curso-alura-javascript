@@ -1,6 +1,10 @@
-var paciente = document.querySelector("#primeiro-paciente");
+var pacientes = document.querySelectorAll(".paciente");
 
-var tdPeso = paciente.querySelector(".info-peso");
+for (var i = 0; i < pacientes.length; i++) {
+    
+    var paciente = pacientes[i];
+
+    var tdPeso = paciente.querySelector(".info-peso");
 var peso = tdPeso.textContent;
 
 var tdAltura = paciente.querySelector(".info-altura");
@@ -25,5 +29,9 @@ if (altura <= 0 || altura >= 3.00) {
 
 if (alturaEhValida && pesoEhValido) {
     var imc = peso / (altura * altura);
-    tdImc.textContent = imc;
+    tdImc.textContent = imc.toFixed(2);
 }
+
+
+}
+
